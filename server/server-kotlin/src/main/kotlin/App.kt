@@ -1,4 +1,4 @@
-package $projectName$
+package $name$
 
 import org.http4k.core.Request
 import org.http4k.client.ApacheClient
