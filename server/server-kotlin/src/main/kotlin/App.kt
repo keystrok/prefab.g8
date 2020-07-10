@@ -1,4 +1,4 @@
-package yourApp
+package $projectName$
 
 import org.http4k.core.Request
 import org.http4k.client.ApacheClient
