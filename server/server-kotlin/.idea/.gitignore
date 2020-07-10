@@ -1,10 +1,2 @@
 # Default ignored files
 /workspace.xml
-
-# IntelliJ
-.idea/*
-!.idea/runConfigurations
-
-# Graddle
-.gradle/*
-/gradle/*
