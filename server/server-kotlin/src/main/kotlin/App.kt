@@ -10,7 +10,7 @@ import org.http4k.server.asServer
 
 fun main() {
 
-    val app = { request: Request -> Response(OK).body("Hello, ${request.query("name")}!") }
+    val app = { request: Request -> Response(OK).body("Hello, \${request.query("name")}!") }
 
     val jettyServer = app.asServer(Jetty(9000)).start()
 
