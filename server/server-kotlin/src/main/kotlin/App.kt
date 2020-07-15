@@ -1,4 +1,4 @@
-package $name$
+package $name;format="camel"$
 
 import org.http4k.core.Request
 import org.http4k.client.ApacheClient
@@ -14,7 +14,7 @@ fun main() {
 
     val jettyServer = app.asServer(Jetty(9000)).start()
 
-    val request = Request(Method.GET, "http://localhost:9000").query("name", "John Doe")
+    val request = Request(Method.GET, "http://localhost:9000").query("name", "$name$")
 
     val client = ApacheClient()
 
