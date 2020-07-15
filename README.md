@@ -7,7 +7,7 @@ We wanted to make it easy for anyone to set up a new repo for building a phone a
 
 ### Usage
 
-`g8 prefab.g8 {project-name}`
+`g8 prefab.g8`
 
 ### Add-ons
 
