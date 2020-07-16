@@ -1,24 +1,28 @@
 package $name;format="camel"$
 
 import org.http4k.core.Request
-import org.http4k.client.ApacheClient
 import org.http4k.core.Method
 import org.http4k.core.Response
 import org.http4k.core.Status.Companion.OK
+import org.http4k.routing.bind
+import org.http4k.routing.routes
 import org.http4k.server.Jetty
 import org.http4k.server.asServer
 
 fun main() {
+    App.counterServer().start().block()
+}
 
-    val app = { request: Request -> Response(OK).body("Hello, \${request.query("name")}!") }
+object App {
+    fun counterServer(port: Int = 8080) = CounterApi.routes.asServer(Jetty(port))
+}
+object CounterApi{
 
-    val jettyServer = app.asServer(Jetty(9000)).start()
+    var sharedCounter = 0;
 
-    val request = Request(Method.GET, "http://localhost:9000").query("name", "$name$")
-
-    val client = ApacheClient()
-
-    println(client(request))
-
-    jettyServer.stop()
+    val routes = routes(
+        "/counter" bind Method.GET to {_: Request -> Response(OK).body(sharedCounter.toString())},
+        "/increment" bind Method.POST to { _: Request ->   sharedCounter += 1; Response(OK).body(sharedCounter.toString()) },
+        "/decrement" bind Method.POST to { _: Request ->   sharedCounter += -1; Response(OK).body(sharedCounter.toString()) }
+    )
 }

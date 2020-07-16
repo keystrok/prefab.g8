@@ -30,10 +30,10 @@ class AppTest {
 
     @Test
     fun `all endpoints are mounted correctly`() {
-        client(Request(GET, "http://localhost:${server.port()}/counter")).answerShouldBe(0)
-        client(Request(POST, "http://localhost:${server.port()}/increment")).answerShouldBe(1)
-        client(Request(POST, "http://localhost:${server.port()}/increment")).answerShouldBe(2)
-        client(Request(POST, "http://localhost:${server.port()}/decrement")).answerShouldBe(1)
+        client(Request(GET, "http://localhost:\${server.port()}/counter")).answerShouldBe(0)
+        client(Request(POST, "http://localhost:\${server.port()}/increment")).answerShouldBe(1)
+        client(Request(POST, "http://localhost:\${server.port()}/increment")).answerShouldBe(2)
+        client(Request(POST, "http://localhost:\${server.port()}/decrement")).answerShouldBe(1)
     }
 
     private fun Response.answerShouldBe(expected: Int) {
