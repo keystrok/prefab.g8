@@ -1,17 +1,13 @@
-# $name$
-
-### What?
-
-what is it
+# prefab.g8
+Setup an app + server easily
 
 ### Why?
 
-why do you need it
+We wanted to make it easy for anyone to set up a new repo for building a phone app.
 
-### How?
+## Usage
+- clone keystrok/prefab.g8 
+- `g8 file://prefab.g8`
 
-how do you do it
-
-### How do you run the tests?
-
-you wrote some remember...
+### Add-ons
+- Reasonml React Native Client -> `create_reason_react_native_app.sh` 

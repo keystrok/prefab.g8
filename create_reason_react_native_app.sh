@@ -7,6 +7,7 @@ mv $name;format="Camel"$App app
 mv reasonml_tea/* app/src
 rm -rf reasonml_tea/
 rm -- "\${0}"
+
 cd app
 yarn install
 yarn re:build
