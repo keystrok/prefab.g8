@@ -7,7 +7,7 @@ We wanted to make it easy for anyone to set up a new repo for building a phone a
 
 ## Usage
 - clone keystrok/prefab.g8 
-- `g8 file://prefab.g8`
+- `g8 file://prefab.g8` (or `g8 file://prefab.g8 --name=my project` to accept all defaults)
+- `cd {project name}`
+- `./init.sh`
 
-### Add-ons
-- Reasonml React Native Client -> `init_reason_react_native_app.sh` 
