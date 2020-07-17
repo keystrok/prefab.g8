@@ -11,7 +11,7 @@ install_reason_react_native () {
   npx @react-native-community/cli init --template @reason-react-native/template $name;format="Camel"$App
   mv $name;format="Camel"$App app
   cp templates/reason_react_native/*.sh app/
-  cp templates/reason_react_native/src/* app/src/
+  cp -R templates/reason_react_native/src/* app/src/
 }
 
 $if(reason-react-native.truthy)$
