@@ -10,4 +10,4 @@ We wanted to make it easy for anyone to set up a new repo for building a phone a
 - `g8 file://prefab.g8`
 
 ### Add-ons
-- Reasonml React Native Client -> `create_reason_react_native_app.sh` 
+- Reasonml React Native Client -> `init_reason_react_native_app.sh` 
