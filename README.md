@@ -12,3 +12,5 @@ We wanted to make it easy for anyone to set up a new repo for building a phone a
 1. `./init.sh`
 1. That's it!
 
+Your projects will be generated inside this folder, e.g. app and server should be opened in intellij as separate projects.
+
