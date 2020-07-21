@@ -18,6 +18,9 @@ install_dependencies () {
   cd app
   npm install --save bs-fetch
   yarn install
+  export src='"bs-dependencies": \['
+  export replacement=' "bs-dependencies": \["bs-fetch", '
+  sed -i ''  "s/$src/$replacement/"  ./bsconfig.json
   cd ..
 }
 
