@@ -1,6 +1,14 @@
 open Types;
 open Shell;
 open ReactNative;
+let renderCount = count =>
+  (
+    switch (count) {
+    | Ready(x) => string_of_int(x)
+    | NotReady => "loading"
+    }
+  )
+  |> React.string;
 
 let view = (state, dispatch) =>
   <DispatchProvider value=dispatch>
@@ -17,7 +25,7 @@ let view = (state, dispatch) =>
                   )
                 )>
                 <Button title="-" onPress={_event => dispatch(Subtract)} />
-                <Text> {React.string(string_of_int(state.count))} </Text>
+                 <Text> {renderCount(state.count)} </Text>
                 <Button title="+" onPress={_event => dispatch(Add)} />
               </View>
       </Shell>

@@ -2,6 +2,14 @@ open Types;
 
 let reducer = (state, action) =>
   switch (action) {
-  | Add => {count: state.count + 1}
-  | Subtract => {count: state.count - 1}
+  | Add =>
+    switch (state.count) {
+    | Ready(x) => {count: Ready(x + 1)}
+    | NotReady => state
+    }
+  | Subtract =>
+    switch (state.count) {
+    | Ready(x) => {count: Ready(x - 1)}
+    | NotReady => state
+    }
   };
