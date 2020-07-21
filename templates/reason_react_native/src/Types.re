@@ -1,7 +1,7 @@
 type msg =
   | Add
   | Subtract
-  | Success(int);;
+  | Success(int);
 
 type count =
   | NotReady
