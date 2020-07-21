@@ -7,7 +7,7 @@ leave_no_trace () {
 }
 
 install_reason_react_native () {
-  npm install -g react-native-cli
+  yarn global add react-native-cli
   npx @react-native-community/cli init --template @reason-react-native/template $name;format="Camel"$App
   mv $name;format="Camel"$App app
   cp templates/reason_react_native/*.sh app/
@@ -16,7 +16,7 @@ install_reason_react_native () {
 
 install_dependencies () {
   cd app
-  npm install --save bs-fetch
+  yarn add bs-fetch
   export src='"bs-dependencies": \['
   export replacement=' "bs-dependencies": \["bs-fetch", '
   sed -i ''  "s/\$src/\$replacement/"  ./bsconfig.json
