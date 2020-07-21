@@ -14,8 +14,16 @@ install_reason_react_native () {
   cp -R templates/reason_react_native/src/* app/src/
 }
 
+install_dependencies () {
+  cd app
+  npm install --save bs-fetch
+  yarn install
+  cd ..
+}
+
 $if(reason-react-native.truthy)$
 install_reason_react_native
+install_dependencies
 $endif$
 
 leave_no_trace
