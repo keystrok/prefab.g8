@@ -10,5 +10,6 @@ let reducer = (state, action) => {
   switch (action) {
   | Add => {count: updateCount(state.count, x => Ready(x + 1))}
   | Subtract => {count: updateCount(state.count, x => Ready(x - 1))}
+  | Success(x) => {count: Ready(x)}
   };
 };
