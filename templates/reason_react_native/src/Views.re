@@ -14,9 +14,9 @@ let view = (state, dispatch) =>
   <DispatchProvider value=dispatch>
     <Shell>
       <View style=Styles.styles##content>
-        <Button title="-" onPress={_event => dispatch(Subtract)} />
+        <Button title="-" onPress={_event => dispatch(Decrement)} />
         <Text> {renderCount(state.count)} </Text>
-        <Button title="+" onPress={_event => dispatch(Add)} />
+        <Button title="+" onPress={_event => dispatch(Increment)} />
       </View>
     </Shell>
   </DispatchProvider>;

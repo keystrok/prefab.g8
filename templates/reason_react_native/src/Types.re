@@ -1,6 +1,6 @@
 type msg =
-  | Add
-  | Subtract
+  | Increment
+  | Decrement
   | Success(int);
 
 type count =
@@ -8,3 +8,4 @@ type count =
   | Ready(int);
 
 type state = {count};
+
