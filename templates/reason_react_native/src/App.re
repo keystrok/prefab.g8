@@ -9,5 +9,6 @@ let app = () => {
     dispatch(Success(1000));
     None;
   });
+
   Views.view(state, dispatch);
 };

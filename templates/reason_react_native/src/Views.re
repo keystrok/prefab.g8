@@ -13,20 +13,10 @@ let renderCount = count =>
 let view = (state, dispatch) =>
   <DispatchProvider value=dispatch>
     <Shell>
-              <View
-                style=Style.(
-                  style(
-                    ~display=`flex,
-                    //            ~flexDirection=`column,
-                    ~justifyContent=`center,
-                    ~alignItems=`center,
-                    ~height=100.->pct,
-                    (),
-                  )
-                )>
-                <Button title="-" onPress={_event => dispatch(Subtract)} />
-                 <Text> {renderCount(state.count)} </Text>
-                <Button title="+" onPress={_event => dispatch(Add)} />
-              </View>
-      </Shell>
+      <View style=Styles.styles##content>
+        <Button title="-" onPress={_event => dispatch(Subtract)} />
+        <Text> {renderCount(state.count)} </Text>
+        <Button title="+" onPress={_event => dispatch(Add)} />
+      </View>
+    </Shell>
   </DispatchProvider>;
