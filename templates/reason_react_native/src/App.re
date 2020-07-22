@@ -1,4 +1,5 @@
 open Types;
+open Count;
 
 [@react.component]
 let app = () => {
@@ -6,7 +7,7 @@ let app = () => {
   let (state, dispatch) = React.useReducer(Update.reducer, initialState);
 
   React.useEffect0(() => {
-    dispatch(Success(1000));
+    getInitialState(dispatch);
     None;
   });
 
