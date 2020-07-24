@@ -1,14 +1,14 @@
 type msg =
   | Load
-  | LoadSuccess(int)
-  | LoadFailed
+  | RequestSuccess(int)
+  | RequestFailure
   | Increment
   | Decrement;
 
 type count =
   | NotAsked
   | Loading
-  | Loaded(int)
-  | LoadError;
+  | Value(int)
+  | Broken;
 
 type state = {count};

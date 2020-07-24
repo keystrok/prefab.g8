@@ -9,9 +9,9 @@ let load = self =>
           Fetch.fetch("http://localhost:8080/counter")
           |> then_(Fetch.Response.text)
           |> then_(x =>
-               LoadSuccess(int_of_string(x)) |> self.send |> resolve
+               RequestSuccess(int_of_string(x)) |> self.send |> resolve
              )
-          |> catch(_error => self.send(LoadFailed) |> resolve)
+          |> catch(_error => self.send(RequestFailure) |> resolve)
           |> ignore
         )
       ),
@@ -28,9 +28,9 @@ let increment = self =>
           )
           |> then_(Fetch.Response.text)
           |> then_(x =>
-               LoadSuccess(int_of_string(x)) |> self.send |> resolve
+               RequestSuccess(int_of_string(x)) |> self.send |> resolve
              )
-          |> catch(_error => self.send(LoadFailed) |> resolve)
+          |> catch(_error => self.send(RequestFailure) |> resolve)
           |> ignore
         )
       ),
@@ -47,9 +47,9 @@ let decrement = self =>
           )
           |> then_(Fetch.Response.text)
           |> then_(x =>
-               LoadSuccess(int_of_string(x)) |> self.send |> resolve
+               RequestSuccess(int_of_string(x)) |> self.send |> resolve
              )
-          |> catch(_error => self.send(LoadFailed) |> resolve)
+          |> catch(_error => self.send(RequestFailure) |> resolve)
           |> ignore
         )
       ),
