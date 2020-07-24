@@ -12,7 +12,7 @@ let load = self => {
       |> ignore
     )
   );
-  Some(() => ());
+  None;
 };
 let increment = self => {
   ReactUpdate.(
@@ -29,7 +29,7 @@ let increment = self => {
       |> ignore
     )
   );
-  Some(() => ());
+  None;
 };
 let decrement = self => {
   ReactUpdate.(
@@ -46,5 +46,5 @@ let decrement = self => {
       |> ignore
     )
   );
-  Some(() => ());
+  None;
 };
