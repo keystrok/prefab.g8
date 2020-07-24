@@ -1,15 +1,10 @@
 open Types;
 
-let updateCount = (count, a: int => count): count =>
-  switch (count) {
-  | Ready(x) => a(x)
-  | NotReady => count
-  };
-
-let reducer = (state, action) =>
+let reducer = (action, _state) =>
   switch (action) {
-  | Increment => {count: updateCount(state.count, x => Ready(x + 1))}
-  | Decrement => {count: updateCount(state.count, x => Ready(x - 1))}
-  | Success(x) => {count: Ready(x)}
-  | Failed => {count: Ready(12019201920192190)}
+  | Load => ReactUpdate.UpdateWithSideEffects({count: Loading}, Count.load)
+  | LoadSuccess(x) => ReactUpdate.Update({count: Loaded(x)})
+  | LoadFailed => ReactUpdate.Update({count: LoadError})
+  | Increment => ReactUpdate.SideEffects(Count.increment)
+  | Decrement => ReactUpdate.SideEffects(Count.decrement)
   };

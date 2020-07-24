@@ -1,15 +1,14 @@
 open Types;
-open Count;
 
 [@react.component]
 let app = () => {
-  let initialState = {count: NotReady};
-  let (state, dispatch) = React.useReducer(Update.reducer, initialState);
+  let initialState = {count: NotAsked};
+  let (state, send) = ReactUpdate.useReducer(initialState, Update.reducer);
 
   React.useEffect0(() => {
-    getInitialState(dispatch);
+    send(Load);
     None;
   });
 
-  Views.view(state, dispatch);
+  Views.view(state, send);
 };

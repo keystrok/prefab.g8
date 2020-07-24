@@ -16,10 +16,19 @@ install_reason_react_native () {
 
 install_dependencies () {
   cd app
+
+  #bs-fetch
   yarn add bs-fetch
   export src='"bs-dependencies": \['
   export replacement=' "bs-dependencies": \["bs-fetch", '
   sed -i ''  "s/\$src/\$replacement/"  ./bsconfig.json
+
+  #reason-react-update
+  yarn add reason-react-update
+  export src='"bs-dependencies": \['
+  export replacement=' "bs-dependencies": \["reason-react-update", '
+  sed -i ''  "s/\$src/\$replacement/"  ./bsconfig.json
+
   cd ..
 }
 
