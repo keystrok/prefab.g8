@@ -5,6 +5,12 @@ Setup an app + server easily
 
 We wanted to make it easy for anyone to set up a new repo for building a phone app.
 
+### Prerequisites
+
+1. java, git, g8, brew, (yarn/npm)
+1. brew install gradle
+ 
+
 ## Usage
 1. `git clone https://github.com-keystrok:keystrok/prefab.g8.git` 
 1. `g8 file://prefab.g8` (or `g8 file://prefab.g8 --name=my project` to accept all defaults)
