@@ -1,4 +1,7 @@
 open Types;
+
+let errorMessage = x => Obj.magic(x);
+
 //TODO: a lot of de-duping to do in here...
 let load = self => {
   ReactUpdate.(
@@ -8,7 +11,9 @@ let load = self => {
       |> then_(x =>
            RequestSuccess(int_of_string(x)) |> self.send |> resolve
          )
-      |> catch(_error => self.send(RequestFailure) |> resolve)
+      |> catch(error =>
+           self.send(RequestFailure(errorMessage(error))) |> resolve
+         )
       |> ignore
     )
   );
@@ -25,7 +30,9 @@ let increment = self => {
       |> then_(x =>
            RequestSuccess(int_of_string(x)) |> self.send |> resolve
          )
-      |> catch(_error => self.send(RequestFailure) |> resolve)
+      |> catch(_error =>
+           self.send(RequestFailure(errorMessage(_error))) |> resolve
+         )
       |> ignore
     )
   );
@@ -42,7 +49,9 @@ let decrement = self => {
       |> then_(x =>
            RequestSuccess(int_of_string(x)) |> self.send |> resolve
          )
-      |> catch(_error => self.send(RequestFailure) |> resolve)
+      |> catch(_error =>
+           self.send(RequestFailure(errorMessage(_error))) |> resolve
+         )
       |> ignore
     )
   );

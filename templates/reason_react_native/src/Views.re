@@ -6,11 +6,11 @@ let viewCount = (count, send) =>
   switch (count) {
   | NotAsked => <Text> "Initialising..."->React.string </Text>
   | Loading => <Text> "Loading..."->React.string </Text>
-  | Broken => <Text> "Error"->React.string </Text>
-  | Value(x) =>
+  | Broken(msg) => <Text> {("" ++ msg)->React.string} </Text>
+  | Value(v) =>
     <>
       <Button title="-" onPress={_event => send(Decrement)} />
-      <Text> {string_of_int(x)->React.string} </Text>
+      <Text> {string_of_int(v)->React.string} </Text>
       <Button title="+" onPress={_event => send(Increment)} />
     </>
   };
