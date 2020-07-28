@@ -8,6 +8,10 @@ repositories {
     mavenCentral()
 }
 
+apply plugin : "application"
+
+mainClassName = "$name$.AppKt"
+
 test {
     useJUnitPlatform()
 }
