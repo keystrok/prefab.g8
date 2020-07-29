@@ -3,7 +3,6 @@
 !.idea/runConfigurations
 
 # Graddle
-/gradle/*
 /.gradle/*
 /build/
 !/gradle/wrapper/gradle-wrapper.jar
