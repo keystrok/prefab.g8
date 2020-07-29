@@ -7,9 +7,8 @@ We wanted to make it easy for anyone to set up a new repo for building a phone a
 
 ### Prerequisites
 
-1. java, git, g8, brew, (yarn/npm)
+1. java, git, g8, brew, yarn, Xcode
 1. brew install gradle
- 
 
 ## Usage
 1. `git clone https://github.com-keystrok:keystrok/prefab.g8.git` 
