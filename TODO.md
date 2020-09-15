@@ -6,3 +6,5 @@
     yarn re:build
     yarn start --reset-cache 
     ```
+- add check dep
+- consider which of the other deps we might want to add
