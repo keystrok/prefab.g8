@@ -10,7 +10,7 @@ let viewCount = (count, send) =>
   | Value(v) =>
     <>
       <Button title="-" onPress={_event => send(Decrement)} />
-      <Text> {string_of_int(v)->React.string} </Text>
+      <Text testID="count"> {string_of_int(v)->React.string} </Text>
       <Button title="+" onPress={_event => send(Increment)} />
     </>
   };

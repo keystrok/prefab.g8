@@ -1,17 +1,20 @@
 # $name;format="cap"$
 
 ### What?
-
 - what is it
 
 ### Why?
-
 - why do you need it
 
 ### How?
+in three separate terminals:
+1. to start the server `cd server && ./run.sh`
+1. to clean, rebuild the app and start metro `cd app && ./refreshAndRestart.sh`
+1. to start the iOS Simulator `cd app && ./runSimulatorIOS.sh`
 
-- how do you do it
+### First time test setup
+1. assuming you successfully built the app as above...
+1. run `find ~/Library/Developer/Xcode/DerivedData -name "$name;format="Camel"$*App.app"` and copy the result that ends with `/Build/Products/Debug-iphonesimulator/$name;format="Camel"$*App.app` into @binaryPathValue in your `.detoxrc.json`
 
-### How do you run the tests?
-
-- you wrote some remember...
+### How do I run the tests?
+- `detox test`

@@ -10,7 +10,7 @@ repositories {
 
 apply plugin : "application"
 
-mainClassName = "$name$.AppKt"
+mainClassName = "$name;format="camel"$.AppKt"
 
 test {
     useJUnitPlatform()

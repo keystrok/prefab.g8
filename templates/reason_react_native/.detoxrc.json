@@ -1,0 +1,14 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "configurations": {
+    "ios": {
+      "type": "ios.simulator",
+      "build": "react-native run-ios",
+      "binaryPath": "@binaryPathValue",
+      "device": {
+        "type": "iPhone 11 Pro Max"
+      }
+    }
+  }
+}

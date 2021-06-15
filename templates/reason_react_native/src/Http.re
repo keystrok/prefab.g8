@@ -1,25 +1,19 @@
-let get = (self, url, success, failure) => {
-  ReactUpdate.(
-    Js.Promise.(
-      Fetch.fetch(url)
-      |> then_(Fetch.Response.text)
-      |> then_(x => success(x) |> self.send |> resolve)
-      |> catch(error => failure(error) |> self.send |> resolve)
-      |> ignore
-    )
+let get = (send, url, success, failure) => {
+  Js.Promise.(
+    Fetch.fetch(url)
+    |> then_(Fetch.Response.text)
+    |> then_(x => success(x) |> send |> resolve)
+    |> catch(error => failure(error) |> send |> resolve)
+    |> ignore
   );
-  None;
 };
 
-let post = (self, url, success, failure) => {
-  ReactUpdate.(
-    Js.Promise.(
-      Fetch.fetchWithInit(url, Fetch.RequestInit.make(~method_=Post, ()))
-      |> then_(Fetch.Response.text)
-      |> then_(x => success(x) |> self.send |> resolve)
-      |> catch(error => failure(error) |> self.send |> resolve)
-      |> ignore
-    )
+let post = (send, url, success, failure) => {
+  Js.Promise.(
+    Fetch.fetchWithInit(url, Fetch.RequestInit.make(~method_=Post, ()))
+    |> then_(Fetch.Response.text)
+    |> then_(x => success(x) |> send |> resolve)
+    |> catch(error => failure(error) |> send |> resolve)
+    |> ignore
   );
-  None;
 };
