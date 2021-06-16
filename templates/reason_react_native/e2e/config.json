@@ -1,0 +1,12 @@
+{
+    "testEnvironment": "./environment",
+    "testRunner": "jest-circus/runner",
+    "testTimeout": 15000,
+    "testRegex": "\\\\Test\\\\.bs.js\$",
+    "reporters": ["detox/runners/jest/streamlineReporter"],
+    "verbose": true,
+    "setupFilesAfterEnv": ["./init.js"],
+    "transformIgnorePatterns": [
+        "node_modules/(?!(jest-)?react-native|react-(native|universal|navigation)-(.*)|@react-native-community/(.*)|@react-navigation/(.*)|bs-platform|(@[a-zA-Z]+/)?(bs|reason|rescript)-(.*)+)"
+    ]
+}
